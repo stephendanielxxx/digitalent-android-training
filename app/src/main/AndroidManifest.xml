@@ -10,12 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DigitalentTraining">
-        <activity android:name=".APIActivity"></activity>
-        <activity android:name=".HorizontalListActivity" />
-        <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".TrainingListViewActivity" />
-        <activity android:name=".ListViewActivity" />
-        <activity android:name=".ListActivity" />
+        <activity android:name=".api.APIActivity"></activity>
+        <activity android:name=".list.HorizontalListActivity" />
+        <activity android:name=".list.RecyclerViewActivity" />
+        <activity android:name=".list.TrainingListViewActivity" />
+        <activity android:name=".list.ListViewActivity" />
+        <activity android:name=".list.ListActivity" />
         <activity android:name=".ActivityTwo" />
         <activity android:name=".MainActivity">
             <intent-filter>

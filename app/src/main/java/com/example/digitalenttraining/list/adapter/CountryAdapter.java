@@ -1,4 +1,4 @@
-package com.example.digitalenttraining;
+package com.example.digitalenttraining.list.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.digitalenttraining.R;
 
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHolder>{
 

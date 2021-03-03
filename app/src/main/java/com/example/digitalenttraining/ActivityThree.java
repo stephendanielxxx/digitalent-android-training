@@ -5,6 +5,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.digitalenttraining.model.UserModel;
+
 public class ActivityThree extends AppCompatActivity {
 
     private TextView textView;

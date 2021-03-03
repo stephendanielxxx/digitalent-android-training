@@ -1,4 +1,4 @@
-package com.example.digitalenttraining;
+package com.example.digitalenttraining.api;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.digitalenttraining.R;
 import com.example.digitalenttraining.apiHelper.BaseApiService;
 import com.example.digitalenttraining.apiHelper.UtilsApi;
 

@@ -1,10 +1,13 @@
-package com.example.digitalenttraining;
+package com.example.digitalenttraining.list;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.example.digitalenttraining.R;
+import com.example.digitalenttraining.list.adapter.CountryAdapter;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 

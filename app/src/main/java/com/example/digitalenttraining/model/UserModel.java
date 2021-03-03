@@ -1,4 +1,4 @@
-package com.example.digitalenttraining;
+package com.example.digitalenttraining.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

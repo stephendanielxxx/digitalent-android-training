@@ -1,10 +1,12 @@
-package com.example.digitalenttraining;
+package com.example.digitalenttraining.list;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.digitalenttraining.R;
 
 public class TrainingListViewActivity extends AppCompatActivity {
 
