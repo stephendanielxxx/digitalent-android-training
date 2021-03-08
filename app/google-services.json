@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "165806679044",
+    "project_id": "telkom-training",
+    "storage_bucket": "telkom-training.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165806679044:android:64240821ad0fe8b7f8c151",
+        "android_client_info": {
+          "package_name": "com.example.digitalenttraining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165806679044-v5upoo23dfp1h26necd8qpqhljvrov38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt3vCAq32hDD9H4r4MF5j0QITZLK9GPaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165806679044-v5upoo23dfp1h26necd8qpqhljvrov38.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

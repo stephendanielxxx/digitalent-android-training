@@ -1,5 +1,6 @@
 package com.example.digitalenttraining;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,11 +10,17 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.digitalenttraining.api.APIActivity;
+import com.example.digitalenttraining.firebasedb.TelkomFirebaseDatabaseActivity;
 import com.example.digitalenttraining.glide.GlideActivity;
 import com.example.digitalenttraining.list.ListViewActivity;
 import com.example.digitalenttraining.maps.MapsActivity;
 import com.example.digitalenttraining.model.UserModel;
 import com.example.digitalenttraining.sqlite.MainSqliteActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_day_3_glide;
     private Button btn_maps;
     private Button btn_sqlite;
+    private Button btn_unsub;
+    private Button btn_sub;
+    private Button btn_write;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         btn_day_3_glide = findViewById(R.id.btn_day_3_glide);
         btn_maps = findViewById(R.id.btn_maps);
         btn_sqlite = findViewById(R.id.btn_sqlite);
+        btn_unsub = findViewById(R.id.btn_unsub);
+        btn_sub = findViewById(R.id.btn_sub);
+        btn_write = findViewById(R.id.btn_write);
 
         UserModel userModel = new UserModel("Try", "Tangerang", 21);
 
@@ -74,5 +87,40 @@ public class MainActivity extends AppCompatActivity {
             Intent sqlite = new Intent(getApplicationContext(), MainSqliteActivity.class);
             startActivity(sqlite);
         });
+
+        getDeviceToken();
+        subscribeToTopic();
+
+        btn_unsub.setOnClickListener(v->{
+            FirebaseMessaging.getInstance().unsubscribeFromTopic("telkom").addOnSuccessListener(aVoid -> {
+                Log.i("FCM", "Success unsubscribe from Telkom");
+            });
+        });
+
+        btn_sub.setOnClickListener(v->{
+            subscribeToTopic();
+        });
+
+        btn_write.setOnClickListener(v->{
+            Intent firebaseDatabase = new Intent(getApplicationContext(), TelkomFirebaseDatabaseActivity.class);
+            startActivity(firebaseDatabase);
+        });
+    }
+
+    private void getDeviceToken(){
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if(!task.isSuccessful()){
+                Log.e("Error FCM", "Can't get device token");
+                return;
+            }
+
+            String token = task.getResult();
+            Log.i("Token FCM", "Token = "+token);
+        });
+    }
+
+    private void subscribeToTopic(){
+        FirebaseMessaging.getInstance().subscribeToTopic("telkom").addOnSuccessListener(aVoid ->
+                Log.i("Topic FCM", "Succes subscribe to Telkom"));
     }
 }

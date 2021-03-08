@@ -58,5 +58,24 @@
         android:layout_marginTop="24dp"
         android:text="Day - 3 SQLITE"/>
 
+    <Button
+        android:id="@+id/btn_unsub"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:text="Day - 4 FCM Unsubscribe Topic"/>
 
+    <Button
+        android:id="@+id/btn_sub"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:text="Day - 4 FCM Subscribe Topic"/>
+
+    <Button
+        android:id="@+id/btn_write"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:text="Day - 4 Firebase Database"/>
 </LinearLayout>

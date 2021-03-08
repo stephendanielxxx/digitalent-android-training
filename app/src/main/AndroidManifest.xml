@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DigitalentTraining">
-        <activity android:name=".sqlite.CreateUserActivity"></activity>
+        <activity android:name=".firebasedb.TelkomFirebaseDatabaseActivity"></activity>
+        <activity android:name=".sqlite.CreateUserActivity" />
         <activity android:name=".sqlite.MainSqliteActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -50,6 +51,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityThree" />
+
+        <service android:name=".fcm.FCMService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
