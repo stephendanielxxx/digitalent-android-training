@@ -1,6 +1,7 @@
 package com.example.digitalenttraining.firebasedb;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 
 import com.example.digitalenttraining.R;
 import com.example.digitalenttraining.model.OfficeModel;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -56,15 +58,42 @@ public class TelkomFirebaseDatabaseActivity extends AppCompatActivity {
 
         });
 
-        listenerReference.addValueEventListener(new ValueEventListener() {
+//        listenerReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                Log.i("FDB", "Data changed "+snapshot);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.e("FDB", "Error firebase database");
+//            }
+//        });
+
+        databaseReference.child("telkom").addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.i("FDB", "Data changed "+snapshot);
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Log.i("FDB", "Child added "+snapshot);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Log.i("FDB", "Child changed "+snapshot);
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                Log.i("FDB", "Child removed "+snapshot);
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("FDB", "Error firebase database");
+
             }
         });
     }

@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DigitalentTraining">
-        <activity android:name=".firebasedb.TelkomFirebaseDatabaseActivity"></activity>
+        <activity android:name=".remoteconfig.RemoteConfigActivity"></activity>
+        <activity android:name=".lottie.LottieActivity" />
+        <activity android:name=".crash.CrashActivity" />
+        <activity android:name=".firebasedb.TelkomFirebaseDatabaseActivity" />
         <activity android:name=".sqlite.CreateUserActivity" />
         <activity android:name=".sqlite.MainSqliteActivity" />
         <!--

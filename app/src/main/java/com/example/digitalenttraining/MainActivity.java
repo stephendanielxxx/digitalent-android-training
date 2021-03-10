@@ -10,11 +10,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.digitalenttraining.api.APIActivity;
+import com.example.digitalenttraining.crash.CrashActivity;
 import com.example.digitalenttraining.firebasedb.TelkomFirebaseDatabaseActivity;
 import com.example.digitalenttraining.glide.GlideActivity;
 import com.example.digitalenttraining.list.ListViewActivity;
+import com.example.digitalenttraining.lottie.LottieActivity;
 import com.example.digitalenttraining.maps.MapsActivity;
 import com.example.digitalenttraining.model.UserModel;
+import com.example.digitalenttraining.remoteconfig.RemoteConfigActivity;
 import com.example.digitalenttraining.sqlite.MainSqliteActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_unsub;
     private Button btn_sub;
     private Button btn_write;
+    private Button btn_crash;
+    private Button btn_lottie;
+    private Button btn_remote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         btn_unsub = findViewById(R.id.btn_unsub);
         btn_sub = findViewById(R.id.btn_sub);
         btn_write = findViewById(R.id.btn_write);
+        btn_crash = findViewById(R.id.btn_crash);
+        btn_lottie = findViewById(R.id.btn_lottie);
+        btn_remote = findViewById(R.id.btn_remote);
 
         UserModel userModel = new UserModel("Try", "Tangerang", 21);
 
@@ -104,6 +113,21 @@ public class MainActivity extends AppCompatActivity {
         btn_write.setOnClickListener(v->{
             Intent firebaseDatabase = new Intent(getApplicationContext(), TelkomFirebaseDatabaseActivity.class);
             startActivity(firebaseDatabase);
+        });
+
+        btn_crash.setOnClickListener(v->{
+           Intent crash = new Intent(getApplicationContext(), CrashActivity.class);
+           startActivity(crash);
+        });
+
+        btn_lottie.setOnClickListener(v->{
+            Intent lottie = new Intent(getApplicationContext(), LottieActivity.class);
+            startActivity(lottie);
+        });
+
+        btn_remote.setOnClickListener(v->{
+            Intent remote = new Intent(getApplicationContext(), RemoteConfigActivity.class);
+            startActivity(remote);
         });
     }
 
